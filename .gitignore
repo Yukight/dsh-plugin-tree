@@ -1,0 +1,7 @@
+node_modules/
+lib/types/
+*.log
+.DS_Store
+dist/
+coverage/
+*.tsbuildinfo

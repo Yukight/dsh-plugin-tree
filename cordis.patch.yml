@@ -1,0 +1,12 @@
+# dsh-plugin-tree host row. Merge into your profile's cordis.patch.yml
+# (or a bundle patch layer) after installing the package, e.g.:
+#
+#   - insert:
+#       - id: plugin-tree
+#         name: dsh-plugin-tree
+#
+# The row publishes the `pluginTree` remote service; it is consumed only by
+# this package's browser half, so it may sit loose in the host composition.
+- insert:
+    - id: plugin-tree
+      name: dsh-plugin-tree

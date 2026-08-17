@@ -1,0 +1,71 @@
+{
+  "name": "dsh-plugin-tree",
+  "version": "0.1.0",
+  "description": "Plugin dependency DAG visualizer & conflict detector for DeepSeek Harness: force-directed graph of the Cordis loader tree with service-dependency edges, node status lights, slot-shadow / missing-dependency detection, layer filters and a pre-install impact preview. Adds a \"插件树\" tab under Settings → Plugins plus a near-fullscreen pinned dialog view.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "lib/typert.host.js",
+    "lib/typert.remote-client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-api-remotes",
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ],
+      "platform": "web"
+    }
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-typert-protocol": "^0.1.0-rc.6",
+    "zod": "^3.24.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/cordis-plugin-loader": "^1.0.2",
+    "react": "^18.2.0"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "cordis",
+    "plugin",
+    "dependency-graph",
+    "dag",
+    "visualization",
+    "conflict-detection"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YuKight/dsh-plugin-tree.git"
+  },
+  "homepage": "https://github.com/YuKight/dsh-plugin-tree#readme",
+  "bugs": {
+    "url": "https://github.com/YuKight/dsh-plugin-tree/issues"
+  },
+  "author": "YuKight",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT"
+}
