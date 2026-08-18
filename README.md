@@ -11,7 +11,8 @@
 ## Features
 
 - **Dependency DAG**: force-directed layout of the Cordis Loader composition tree; solid edges = composition hierarchy, dashed blue arrows = runtime service-dependency edges (consumer → provider).
-- **Node status lights**: 🟢 mounted · ⚪ disabled · 🟡 loading ·  pending deps ·  failed · hollow green = enabled-but-unmounted; missing dependencies get a red ring.
+- **Node status lights**: 🟢 mounted ·  disabled ·  loading · 🔵 pending deps · 🔴 failed · hollow green = enabled-but-unmounted; missing dependencies get a red ring.
+- **Dependency-weighted radius**: more-depended-on nodes render larger (small log step, modest growth), with radius-aware collision repulsion so big hubs don't obscure small nodes.
 - **Conflict detection**: missing dependencies, mount failures, pending dependencies, and slot same-cell shadowing (⚠ issues card, click to focus the node).
 - **Pre-install impact preview**: enter a candidate plugin's `inject` services and intended slots (`name` or `name#id`) to evaluate missing / provider / shadowing live, with injection points highlighted in the graph.
 - **Layer filters**: user / feature / infra / framework (framework hidden by default).
